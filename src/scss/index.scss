@@ -1,8 +1,15 @@
 @import "variables";
 
-* {
+*,
+*::before,
+*::after {
   margin: rem(0);
   padding: rem(0);
   line-height: rem(24);
   box-sizing: border-box;
+}
+
+body {
+  font-family: $font;
+  font-size: $card-heading-font-size;
 }
