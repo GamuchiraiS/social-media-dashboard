@@ -1,0 +1,17 @@
+---
+export interface HeaderInfo {
+  totalFollowerCount: number;
+  heading: string;
+}
+
+const { totalFollowerCount = `23,004`, heading = "Social Media Dashboard" } =
+  Astro.props as HeaderInfo;
+---
+
+<header class="header">
+  <div class="header__title">
+    <h1>{heading}</h1>
+    <p class="header__subtitle">Total Followers: {totalFollowerCount}</p>
+    <hr />
+  </div>
+</header>
