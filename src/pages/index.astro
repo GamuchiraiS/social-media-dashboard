@@ -1,20 +1,113 @@
 ---
+//file imports
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Card from "../components/Card.astro";
 import CardsWrapper from "../components/CardsWrapper.astro";
+
+//assets imports
+import facebookIcon from "/images/icon-facebook.svg";
+import twitterIcon from "/images/icon-twitter.svg";
+import instagramIcon from "/images/icon-instagram.svg";
+import youtubeIcon from "/images/icon-youtube.svg";
+import arrowUpIcon from "/images/icon-up.svg";
+import arrowDownIcon from "/images/icon-down.svg";
+
+export interface CustomClassName {
+  grid?: string;
+  container?: string;
+}
+//TODO:Figure out how to add custom class
+const { grid = "grid" } = Astro.props as CustomClassName;
 ---
 
 <Layout>
   <Header />
   <main class="cards">
+    <!-- Container -->
     <CardsWrapper>
+      <!-- Facebook card -->
       <Card>
-        <p>hdhdhdhdh</p>
-        <p>hdhdhdhdh</p>
-        <p>hdhdhdhdh</p>
-        <p>hdhdhdhdh</p>
-        <p>hdhdhdhdh</p>
+        <img
+          slot="social-platform"
+          class="card__icon"
+          src={facebookIcon}
+          alt="Facebook logo icon"
+        />
+        <p slot="social-platform" class="card__username">@nathanf</p>
+        <p slot="social-followers" class="card__followers--count">1987</p>
+        <p slot="social-followers" class="card__followers--text">Followers</p>
+        <img
+          class="card__stats--icon"
+          slot="social-change"
+          src={arrowUpIcon}
+          alt="Green up arrow"
+          srcset=""
+        />
+        <p class="card__stats--number" slot="social-change">12 Today</p>
+      </Card>
+
+      <!-- Twitter card -->
+      <Card>
+        <img
+          slot="social-platform"
+          class="card__icon"
+          src={twitterIcon}
+          alt="Facebook logo icon"
+        />
+        <p slot="social-platform" class="card__username">@nathanf</p>
+        <p slot="social-followers" class="card__followers--count">1044</p>
+        <p slot="social-followers" class="card__followers--text">Followers</p>
+        <img
+          class="card__stats--icon"
+          slot="social-change"
+          src={arrowUpIcon}
+          alt="Green up arrow"
+          srcset=""
+        />
+        <p class="card__stats--number" slot="social-change">99 Today</p>
+      </Card>
+
+      <!-- Instagram card -->
+      <Card>
+        <img
+          slot="social-platform"
+          class="card__icon"
+          src={instagramIcon}
+          alt="Instagram logo icon"
+        />
+        <p slot="social-platform" class="card__username">@realnathanf</p>
+        <p slot="social-followers" class="card__followers--count">11K</p>
+        <p slot="social-followers" class="card__followers--text">Followers</p>
+        <img
+          class="card__stats--icon"
+          slot="social-change"
+          src={arrowUpIcon}
+          alt="Green up arrow"
+          srcset=""
+        />
+        <p class="card__stats--number" slot="social-change">1099 Today</p>
+      </Card>
+
+      <!-- YouTube card -->
+      <Card>
+        <img
+          slot="social-platform"
+          class="card__icon"
+          src={youtubeIcon}
+          alt="Youtube logo icon"
+        />
+        <p slot="social-platform" class="card__username">Nathan F</p>
+        <p slot="social-followers" class="card__followers--count">8239</p>
+        <p slot="social-followers" class="card__followers--text">Subscribers</p>
+        <img
+          class="card__stats--icon"
+          slot="social-change"
+          src={arrowDownIcon}
+          alt="Red down arrow"
+          srcset=""
+        />
+        <p class="card__stats--number" slot="social-change">144 Today</p>
       </Card>
     </CardsWrapper>
   </main>

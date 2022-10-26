@@ -2,7 +2,15 @@
 ---
 
 <div class="card">
-  <slot />
+  <div class="card__platform">
+    <slot name="social-platform" />
+  </div>
+  <div class="card__followers">
+    <slot name="social-followers" />
+  </div>
+  <div class="card__stats">
+    <slot name="social-change" />
+  </div>
 </div>
 
 <style lang="scss">
@@ -11,5 +19,13 @@
   .card {
     background-color: $light-theme-card-bg-light-blue;
     border-radius: rem(5);
+    margin-bottom: rem(20);
+
+    &:nth-child(1) {
+      margin-top: rem(40);
+    }
+
+    &__platform {
+    }
   }
 </style>
